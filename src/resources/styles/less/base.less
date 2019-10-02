@@ -1,0 +1,54 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+
+    box-sizing: inherit;
+}
+
+html {
+
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+
+
+.responsive(@maxWidth; @rules) {
+
+    @media only screen and (max-width: @maxWidth) {
+
+        @rules();
+
+    }
+}
+
+.between(@maxWidth; @minWidth; @rules) {
+
+    @media only screen and (max-width: @maxWidth) and (min-width: @minWidth) {
+
+        @rules();
+
+    }
+}
+
+/*
+
+usage
+
+.map {
+
+    .responsive(600px, {
+
+        background: salmon;
+
+    });
+}
+
+*/
+
