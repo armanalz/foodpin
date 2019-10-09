@@ -42,10 +42,13 @@ COLORS
 */
 .main {
   background: #F1F1F1;
-  height: 100vh;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
-  position: relative;
+}
+@media only screen and (max-width: 1080px) {
+  .main {
+    height: auto;
+  }
 }
 .header {
   display: flex;
@@ -66,6 +69,11 @@ COLORS
   display: flex;
   margin: 0 0 0 -40rem;
 }
+@media only screen and (max-width: 1080px) {
+  .header_navigation {
+    margin: 0 0 0 -15rem;
+  }
+}
 .header_navigation-item {
   font-size: 1.5rem;
   margin: 0 4rem 0 0;
@@ -73,19 +81,37 @@ COLORS
 }
 .carousel {
   background: #E1BCA5;
-  clip-path: circle(50% at 71% -16%);
-  height: 220%;
+  clip-path: circle(50vw at 70% -15vw);
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  max-height: 50rem;
+  z-index: -9;
+  overflow: visible;
+}
+@media only screen and (max-width: 1080px) {
+  .carousel {
+    clip-path: circle(50vw at 50% -1vw);
+    justify-content: center;
+    align-items: center;
+    max-height: 55rem;
+  }
 }
 .carousel_circle {
   width: 56rem;
   height: 56rem;
   border: dashed salmon 2px ;
   border-radius: 50%;
-  margin: 12rem 10rem auto auto;
+  margin: 12rem 11rem auto auto;
   position: relative;
+  z-index: 9;
+  overflow: visible;
+  transition: all 0.3s;
+}
+@media only screen and (max-width: 1080px) {
+  .carousel_circle {
+    margin: 12rem auto auto auto;
+  }
 }
 .carousel_circle-item {
   width: 8rem;
@@ -133,8 +159,120 @@ COLORS
   right: 4.2rem;
   background: firebrick;
 }
+.bottom-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 1080px) {
+  .bottom-section {
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+  }
+}
+.description {
+  padding: 5rem;
+  margin-top: -27rem;
+}
+@media only screen and (max-width: 1080px) {
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+}
+.description_price {
+  color: #f56623;
+  font-size: 4.8rem;
+  margin: 0 0 2.5rem 0;
+  font-weight: 600;
+}
+@media only screen and (max-width: 1080px) {
+  .description_price {
+    text-align: center;
+  }
+}
+.description_title {
+  font-size: 4.2rem;
+  font-weight: 500;
+  color: #3a3a3a;
+  text-transform: capitalize;
+  max-width: 30rem;
+  margin: 0 0 1.5rem 0;
+}
+@media only screen and (max-width: 1080px) {
+  .description_title {
+    text-align: center;
+  }
+}
+.description_text {
+  font-size: 1.3rem;
+  color: #525252;
+  margin: 0 0 3rem 0;
+  max-width: 30rem;
+}
+@media only screen and (max-width: 1080px) {
+  .description_text {
+    text-align: center;
+  }
+}
+.description_button {
+  width: 15rem;
+  border-radius: 10rem;
+  background: #f56623;
+  color: #fefefe;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.controller {
+  display: flex;
+  flex-direction: row;
+  margin: -20rem 9rem 0 0;
+  z-index: 9999;
+}
+@media only screen and (max-width: 1080px) {
+  .controller {
+    justify-content: center;
+    margin: -22rem 0 0 0;
+  }
+}
+.controller_arrow {
+  background: #fefefe;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 18rem;
+}
+.controller_arrow.left {
+  margin-right: 13rem;
+}
+.controller_arrow.right {
+  margin-left: 13rem;
+}
+.controller_middle {
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  background: seagreen;
+}
 .icon-location-shopping {
   width: 1.5rem;
   height: 1.5rem;
   fill: #3a3a3a;
+}
+.icon-arrow-down2 {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: #f56623;
 }

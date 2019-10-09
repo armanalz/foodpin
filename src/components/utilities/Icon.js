@@ -6,7 +6,7 @@ const Icon = (props) => {
     return (
 
         <svg id={`${props.id}`} className={`${props.name}`} style={{fill:`${props.fill}`}}>
-		   <use xlinkHref={`${SVG}#${props.name}`} />
+		   <use id={`${props.id}`} xlinkHref={`${SVG}#${props.name}`} />
 	    </svg>
     );
 };
