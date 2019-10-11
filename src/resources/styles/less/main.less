@@ -96,65 +96,71 @@
 
         &-item {
 
-            width: 8rem;
-            height: 8rem;
+            width: 9rem;
+            height: 9rem;
             border-radius: 50%;
             position: absolute;
+            background-repeat: no-repeat;
+            background-size: cover;
 
             &.top {
 
-                top: -4rem;
-                left: 24rem;
-                background: sandybrown;
+                top: -4.5rem;
+                left: 23.5rem;
+                background-image: url(../../img/img-0.png);
+                
             }
 
             &.top-left {
 
-                top: 4.2rem;
-                left: 4.2rem;
-                background: sienna;
+                top: 3.7rem;
+                left: 3.7rem;
+                background-image: url(../../img/img-1.png);
+
             }
 
             &.left {
 
-                top: 24rem;
-                left: -4rem;
-                background: springgreen;
+                top: 23.5rem;
+                left: -4.5rem;
+                background-image: url(../../img/img-2.png);
+
             }
 
             &.bottom-left {
 
-                bottom: 4.2rem;
-                left: 4.2rem;
-                background: steelblue;
+                bottom: 3.7rem;
+                left: 3.7rem;
+                background-image: url(../../img/img-3.png);
+
             }
 
             &.bottom {
 
-                left: 24rem;
-                bottom: -4rem;
-                background: saddlebrown;
+                left: 23.5rem;
+                bottom: -4.5rem;
+                background-image: url(../../img/img-4.png);
             }
 
             &.bottom-right {
 
-                bottom: 4.2rem;
-                right: 4.2rem;
-                background: aqua;
+                bottom: 3.7rem;
+                right: 3.7rem;
+                background-image: url(../../img/img-5.png);
             }
 
             &.right {
 
-                top: 24rem;
-                right: -4rem;
-                background: peachpuff;
+                top: 23.5rem;
+                right: -4.5rem;
+                background-image: url(../../img/img-6.png);
             }
 
             &.top-right {
 
-                top: 4.2rem;
-                right: 4.2rem;
-                background: firebrick;
+                top: 3.7rem;
+                right: 3.7rem;
+                background-image: url(../../img/img-7.png);
             }           
            
         }
@@ -284,6 +290,18 @@
         justify-content: center;
         align-items: center;
         margin-top: 18rem;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover {
+
+            box-shadow: -2px 2px 15px -3px @color-secondary;
+        }
+
+        &:active {
+
+            transform: translateY(3px);
+        }
 
 
         &.left {
@@ -304,8 +322,11 @@
 
         width: 26rem;
         height: 26rem;
+        padding: 0;
         border-radius: 50%;
-        background: seagreen;
+        transition: all .5s;
+        background-size: cover;
+        background-repeat: no-repeat;
        
     }
 
