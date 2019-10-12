@@ -11,8 +11,16 @@ class Main extends Component {
         description: {
 
             price: [32,45,71,59,60,90,29,44],
-            title: ["green goddes chicken salad","ghorme","gheime","6andaz","ghoorzbij","kuiipala","khulabe","piazkhoroush"],
-            text: ["lorem ipsum dolor sit amet","lorem ipsum dolor sit amet","lorem ipsum dolor sit amet","lorem ipsum dolor sit amet","lorem ipsum dolor sit amet","lorem ipsum dolor sit amet","lorem ipsum dolor sit amet","lorem ipsum dolor sit amet"],
+            title: ["green goddes chicken salad","salmon with vegetables","creamy pasta with broccoli",
+                    "rigatoni with cheese","steak with vegetables","fresh carrot salad",
+                    "kentucky chicken","lasanga with ketchup"
+                   ],
+            text: ["lorem ipsum dolor sit amet","lorem ipsum dolor sit amet",
+                   "lorem ipsum dolor sit amet","lorem ipsum dolor sit amet",
+                   "lorem ipsum dolor sit amet","lorem ipsum dolor sit amet",
+                   "lorem ipsum dolor sit amet","lorem ipsum dolor sit amet"
+                  ],
+            color: ["pink","yellow","blue","green","violet","brown","aqua","magenta"]
 
         }
 
@@ -57,7 +65,9 @@ class Main extends Component {
         let bg = require(`../resources/img/img-${this.state.i}.png`)
 
         return (
+
             <main className="main">
+
                 <header className="header">
                     <h4 className="header_title">FoodSpin</h4>
                     <nav className="header_navigation">
@@ -67,9 +77,10 @@ class Main extends Component {
                     </nav>
                     <Icon name="icon-location-shopping"/>
                 </header>
-                <div className="carousel">
 
-                    <div className="carousel_circle"
+                <div className={`carousel ${this.state.description.color[this.state.i]}`}>
+
+                    <div className={`carousel_circle ${this.state.description.color[this.state.i]}`}
                          style ={{transform:`rotate(${this.state.rotate}deg)`}}
                     >
                         <div className="carousel_circle-item top"> </div>
@@ -88,12 +99,26 @@ class Main extends Component {
                 <div className="bottom-section">
 
                     <div className="description">
-                        <h1 className="description_price">${this.state.description.price[this.state.i]}</h1>
-                        <h2 className="description_title">{this.state.description.title[this.state.i]}</h2>
-                        <p className="description_text">lorem ipsum dolor sit amet loren ipsum dolor
-                                      sit amet lorem ipsum dolor sit amet {this.state.description.text[this.state.i]}
+                        <h1 className={`description_price 
+                                        ${this.state.description.color[this.state.i]}`
+                                      }
+                        >
+                             ${this.state.description.price[this.state.i]}
+                        </h1>
+                        <h2 className="description_title">
+                            {this.state.description.title[this.state.i]}
+                        </h2>
+                        <p className="description_text">
+                            lorem ipsum dolor sit amet loren ipsum dolor
+                            sit amet lorem ipsum dolor sit amet 
+                            {this.state.description.text[this.state.i]}
                          </p>
-                        <div className="description_button">add to card</div>
+                        <div className={`description_button 
+                                         ${this.state.description.color[this.state.i]}`
+                                       }
+                        >
+                            add to card
+                        </div>
                     </div>
 
                     <div className="controller">
@@ -107,7 +132,10 @@ class Main extends Component {
                         </div>
 
                         <div className="controller_middle" 
-                             style={{transform:`rotate(${this.state.circulate}deg)`,backgroundImage:`url(${bg})`}}
+                             style={{
+                                       transform:`rotate(${this.state.circulate}deg)`,
+                                       backgroundImage:`url(${bg})`
+                                    }}
                         >
 
                         </div>
@@ -120,9 +148,10 @@ class Main extends Component {
                             />
                         </div>
 
-                    </div>
+                    </div> {/* controller */}
 
                 </div>  {/* bottom-section */}
+
             </main>
         );
     }

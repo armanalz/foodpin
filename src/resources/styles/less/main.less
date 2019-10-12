@@ -1,14 +1,7 @@
 .main {
 
-    background: @bg-color;
     overflow: hidden;
     font-family: @main-font;
-
-    .responsive(@tab-land, {
-
-        height: auto;
- 
-     });
 
 }
 
@@ -54,7 +47,6 @@
 
 .carousel {
 
-    background: @color-pink;
     clip-path:  circle(50vw at 70% -15vw);
     display: flex;
     justify-content: flex-end;
@@ -73,12 +65,54 @@
  
      });
 
+     &.pink {
+
+        background: @color-pink;
+        
+     }
+
+     &.yellow {
+
+        background: @color-yellow;
+     }
+
+     &.magenta {
+
+        background: @color-magenta;
+     }
+
+     &.violet {
+
+        background: @color-violet;
+     }
+
+     &.brown {
+
+        background: @color-brown;
+     }
+
+     &.green {
+
+        background: @color-green;
+     }
+
+     &.aqua {
+
+        background: @color-aqua;
+     }
+
+     &.blue {
+
+        background: @color-blue;
+     }
+
 
     &_circle {
 
         width: 56rem;
         height: 56rem;
-        border: dashed salmon 2px ;
+        border-style: dashed;
+        border-width: 2px;
         border-radius: 50%;
         margin: 12rem 11rem auto auto;
         position: relative;
@@ -91,7 +125,55 @@
             margin:12rem auto auto auto;
             
      
-         });
+        });
+
+        .responsive(@phone, {
+
+            width: 36rem;
+            height: 36rem;
+    
+        });
+
+        &.pink {
+
+            border-color: darken(@color-pink, 35%);
+           
+        }
+   
+        &.yellow {
+   
+            border-color: darken(@color-yellow, 35%);
+        }
+   
+        &.magenta {
+   
+            border-color: darken(@color-magenta, 35%);
+        }
+   
+        &.violet {
+   
+            border-color: darken(@color-violet, 35%);
+        }
+   
+        &.brown {
+   
+            border-color: darken(@color-brown, 35%);
+        }
+   
+        &.green {
+   
+            border-color: darken(@color-green, 35%);
+        }
+   
+        &.aqua {
+   
+            border-color: darken(@color-aqua, 35%);    
+        }
+   
+        &.blue {
+   
+            border-color: darken(@color-blue, 35%);       
+         } 
      
 
         &-item {
@@ -103,11 +185,25 @@
             background-repeat: no-repeat;
             background-size: cover;
 
+            .responsive(@phone, {
+
+                width: 8rem;
+                height: 8rem;
+        
+            });
+
             &.top {
 
                 top: -4.5rem;
                 left: 23.5rem;
                 background-image: url(../../img/img-0.png);
+
+                .responsive(@phone, {
+
+                    top: -4rem;
+                    left: 14rem;
+            
+                });
                 
             }
 
@@ -117,6 +213,13 @@
                 left: 3.7rem;
                 background-image: url(../../img/img-1.png);
 
+                .responsive(@phone, {
+
+                    top: 1.27rem;
+                    left: 1.27rem;
+            
+                });
+
             }
 
             &.left {
@@ -124,6 +227,13 @@
                 top: 23.5rem;
                 left: -4.5rem;
                 background-image: url(../../img/img-2.png);
+
+                .responsive(@phone, {
+
+                    left: -4rem;
+                    top: 14rem;
+            
+                });
 
             }
 
@@ -133,6 +243,13 @@
                 left: 3.7rem;
                 background-image: url(../../img/img-3.png);
 
+                .responsive(@phone, {
+
+                    bottom: 1.27rem;
+                    left: 1.27rem;
+            
+                });
+
             }
 
             &.bottom {
@@ -140,6 +257,13 @@
                 left: 23.5rem;
                 bottom: -4.5rem;
                 background-image: url(../../img/img-4.png);
+
+                .responsive(@phone, {
+
+                    bottom: -4rem;
+                    left: 14rem;
+            
+                });
             }
 
             &.bottom-right {
@@ -147,6 +271,13 @@
                 bottom: 3.7rem;
                 right: 3.7rem;
                 background-image: url(../../img/img-5.png);
+
+                .responsive(@phone, {
+
+                    bottom: 1.27rem;
+                    right: 1.27rem;
+            
+                });
             }
 
             &.right {
@@ -154,6 +285,13 @@
                 top: 23.5rem;
                 right: -4.5rem;
                 background-image: url(../../img/img-6.png);
+
+                .responsive(@phone, {
+
+                    right: -4rem;
+                    top: 14rem;
+            
+                });
             }
 
             &.top-right {
@@ -161,6 +299,13 @@
                 top: 3.7rem;
                 right: 3.7rem;
                 background-image: url(../../img/img-7.png);
+
+                .responsive(@phone, {
+
+                    top: 1.27rem;
+                    right: 1.27rem;
+            
+                });
             }           
            
         }
@@ -202,7 +347,6 @@
 
     &_price {
 
-        color: @color-orange;
         font-size: 4.8rem;
         margin: 0 0 2.5rem 0;
         font-weight: 600;
@@ -210,8 +354,50 @@
         .responsive(@tab-land, {
 
           text-align: center;
+          margin: 2rem 0 2.5rem 0;
      
         });
+
+        &.pink {
+
+             color: darken(@color-pink, 35%);
+            
+         }
+    
+         &.yellow {
+    
+             color: darken(@color-yellow, 35%);
+         }
+    
+         &.magenta {
+    
+             color: darken(@color-magenta, 35%);
+         }
+    
+         &.violet {
+    
+             color: darken(@color-violet, 35%);
+         }
+    
+         &.brown {
+    
+             color: darken(@color-brown, 35%);
+         }
+    
+         &.green {
+    
+             color: darken(@color-green, 35%);
+         }
+    
+         &.aqua {
+    
+             color: darken(@color-aqua, 35%);    
+         }
+    
+         &.blue {
+    
+             color: darken(@color-blue, 35%);       
+          } 
 
     }
 
@@ -251,7 +437,6 @@
 
         width: 15rem;
         border-radius: 10rem;
-        background: @color-orange;
         color: @color-white;
         text-transform: capitalize;
         font-size: 1.3rem;
@@ -260,7 +445,48 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         
+        &.pink {
+
+            background: darken(@color-pink, 35%);
+            
+         }
+    
+         &.yellow {
+    
+            background: darken(@color-yellow, 35%);
+         }
+    
+         &.magenta {
+    
+            background: darken(@color-magenta, 35%);
+         }
+    
+         &.violet {
+    
+            background: darken(@color-violet, 35%);
+         }
+    
+         &.brown {
+    
+            background: darken(@color-brown, 35%);
+         }
+    
+         &.green {
+    
+            background: darken(@color-green, 35%);
+         }
+    
+         &.aqua {
+    
+            background: darken(@color-aqua, 35%);    
+         }
+    
+         &.blue {
+    
+            background: darken(@color-blue, 35%);       
+          }      
 
     }
 }
@@ -280,6 +506,12 @@
  
      });
 
+    .responsive(@phone, {
+
+        margin: -25rem 0 0 0;
+
+    });
+
     &_arrow {
 
         background: @color-white;
@@ -292,6 +524,12 @@
         margin-top: 18rem;
         cursor: pointer;
         transition: all .3s;
+
+        .responsive(@phone, {
+
+            margin-top: 10rem;
+    
+        });
 
         &:hover {
 
@@ -308,11 +546,24 @@
 
             margin-right: 13rem;
 
+            .responsive(@phone, {
+
+                margin-right: 8rem;
+        
+            });
+
         }
 
         &.right {
 
             margin-left: 13rem;
+
+            .responsive(@phone, {
+
+                margin-left: 8rem;
+        
+            });
+
 
         }
     }
@@ -327,6 +578,13 @@
         transition: all .5s;
         background-size: cover;
         background-repeat: no-repeat;
+
+        .responsive(@phone, {
+
+            width: 18rem;
+            height: 18rem;
+    
+        });
        
     }
 

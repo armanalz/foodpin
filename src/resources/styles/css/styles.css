@@ -11,6 +11,9 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+body {
+  background: #F1F1F1;
+}
 /*
 *
 BREAK POINTS
@@ -41,14 +44,8 @@ COLORS
 *
 */
 .main {
-  background: #F1F1F1;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
-}
-@media only screen and (max-width: 1080px) {
-  .main {
-    height: auto;
-  }
 }
 .header {
   display: flex;
@@ -80,7 +77,6 @@ COLORS
   text-transform: capitalize;
 }
 .carousel {
-  background: #E1BCA5;
   clip-path: circle(50vw at 70% -15vw);
   display: flex;
   justify-content: flex-end;
@@ -97,10 +93,35 @@ COLORS
     max-height: 55rem;
   }
 }
+.carousel.pink {
+  background: #f5d3be;
+}
+.carousel.yellow {
+  background: #f8f3aa;
+}
+.carousel.magenta {
+  background: #fac3dd;
+}
+.carousel.violet {
+  background: #f0bff6;
+}
+.carousel.brown {
+  background: #fac59f;
+}
+.carousel.green {
+  background: #a1faa9;
+}
+.carousel.aqua {
+  background: #aaf8eb;
+}
+.carousel.blue {
+  background: #bce1fa;
+}
 .carousel_circle {
   width: 56rem;
   height: 56rem;
-  border: dashed salmon 2px ;
+  border-style: dashed;
+  border-width: 2px;
   border-radius: 50%;
   margin: 12rem 11rem auto auto;
   position: relative;
@@ -113,6 +134,36 @@ COLORS
     margin: 12rem auto auto auto;
   }
 }
+@media only screen and (max-width: 650px) {
+  .carousel_circle {
+    width: 36rem;
+    height: 36rem;
+  }
+}
+.carousel_circle.pink {
+  border-color: #dd6a23;
+}
+.carousel_circle.yellow {
+  border-color: #ddd012;
+}
+.carousel_circle.magenta {
+  border-color: #ec1e80;
+}
+.carousel_circle.violet {
+  border-color: #cb23e0;
+}
+.carousel_circle.brown {
+  border-color: #db620b;
+}
+.carousel_circle.green {
+  border-color: #0cdd1f;
+}
+.carousel_circle.aqua {
+  border-color: #12ddbb;
+}
+.carousel_circle.blue {
+  border-color: #1697ee;
+}
 .carousel_circle-item {
   width: 9rem;
   height: 9rem;
@@ -121,45 +172,99 @@ COLORS
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item {
+    width: 8rem;
+    height: 8rem;
+  }
+}
 .carousel_circle-item.top {
   top: -4.5rem;
   left: 23.5rem;
   background-image: url(../../img/img-0.png);
+}
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item.top {
+    top: -4rem;
+    left: 14rem;
+  }
 }
 .carousel_circle-item.top-left {
   top: 3.7rem;
   left: 3.7rem;
   background-image: url(../../img/img-1.png);
 }
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item.top-left {
+    top: 1.27rem;
+    left: 1.27rem;
+  }
+}
 .carousel_circle-item.left {
   top: 23.5rem;
   left: -4.5rem;
   background-image: url(../../img/img-2.png);
+}
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item.left {
+    left: -4rem;
+    top: 14rem;
+  }
 }
 .carousel_circle-item.bottom-left {
   bottom: 3.7rem;
   left: 3.7rem;
   background-image: url(../../img/img-3.png);
 }
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item.bottom-left {
+    bottom: 1.27rem;
+    left: 1.27rem;
+  }
+}
 .carousel_circle-item.bottom {
   left: 23.5rem;
   bottom: -4.5rem;
   background-image: url(../../img/img-4.png);
+}
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item.bottom {
+    bottom: -4rem;
+    left: 14rem;
+  }
 }
 .carousel_circle-item.bottom-right {
   bottom: 3.7rem;
   right: 3.7rem;
   background-image: url(../../img/img-5.png);
 }
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item.bottom-right {
+    bottom: 1.27rem;
+    right: 1.27rem;
+  }
+}
 .carousel_circle-item.right {
   top: 23.5rem;
   right: -4.5rem;
   background-image: url(../../img/img-6.png);
 }
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item.right {
+    right: -4rem;
+    top: 14rem;
+  }
+}
 .carousel_circle-item.top-right {
   top: 3.7rem;
   right: 3.7rem;
   background-image: url(../../img/img-7.png);
+}
+@media only screen and (max-width: 650px) {
+  .carousel_circle-item.top-right {
+    top: 1.27rem;
+    right: 1.27rem;
+  }
 }
 .bottom-section {
   display: flex;
@@ -187,7 +292,6 @@ COLORS
   }
 }
 .description_price {
-  color: #f56623;
   font-size: 4.8rem;
   margin: 0 0 2.5rem 0;
   font-weight: 600;
@@ -195,7 +299,32 @@ COLORS
 @media only screen and (max-width: 1080px) {
   .description_price {
     text-align: center;
+    margin: 2rem 0 2.5rem 0;
   }
+}
+.description_price.pink {
+  color: #dd6a23;
+}
+.description_price.yellow {
+  color: #ddd012;
+}
+.description_price.magenta {
+  color: #ec1e80;
+}
+.description_price.violet {
+  color: #cb23e0;
+}
+.description_price.brown {
+  color: #db620b;
+}
+.description_price.green {
+  color: #0cdd1f;
+}
+.description_price.aqua {
+  color: #12ddbb;
+}
+.description_price.blue {
+  color: #1697ee;
 }
 .description_title {
   font-size: 4.2rem;
@@ -224,7 +353,6 @@ COLORS
 .description_button {
   width: 15rem;
   border-radius: 10rem;
-  background: #f56623;
   color: #fefefe;
   text-transform: capitalize;
   font-size: 1.3rem;
@@ -233,6 +361,30 @@ COLORS
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.description_button.pink {
+  background: #dd6a23;
+}
+.description_button.yellow {
+  background: #ddd012;
+}
+.description_button.magenta {
+  background: #ec1e80;
+}
+.description_button.violet {
+  background: #cb23e0;
+}
+.description_button.brown {
+  background: #db620b;
+}
+.description_button.green {
+  background: #0cdd1f;
+}
+.description_button.aqua {
+  background: #12ddbb;
+}
+.description_button.blue {
+  background: #1697ee;
 }
 .controller {
   display: flex;
@@ -244,6 +396,11 @@ COLORS
   .controller {
     justify-content: center;
     margin: -22rem 0 0 0;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .controller {
+    margin: -25rem 0 0 0;
   }
 }
 .controller_arrow {
@@ -258,6 +415,11 @@ COLORS
   cursor: pointer;
   transition: all 0.3s;
 }
+@media only screen and (max-width: 650px) {
+  .controller_arrow {
+    margin-top: 10rem;
+  }
+}
 .controller_arrow:hover {
   box-shadow: -2px 2px 15px -3px #525252;
 }
@@ -267,8 +429,18 @@ COLORS
 .controller_arrow.left {
   margin-right: 13rem;
 }
+@media only screen and (max-width: 650px) {
+  .controller_arrow.left {
+    margin-right: 8rem;
+  }
+}
 .controller_arrow.right {
   margin-left: 13rem;
+}
+@media only screen and (max-width: 650px) {
+  .controller_arrow.right {
+    margin-left: 8rem;
+  }
 }
 .controller_middle {
   width: 26rem;
@@ -278,6 +450,12 @@ COLORS
   transition: all 0.5s;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media only screen and (max-width: 650px) {
+  .controller_middle {
+    width: 18rem;
+    height: 18rem;
+  }
 }
 .icon-location-shopping {
   width: 1.5rem;
