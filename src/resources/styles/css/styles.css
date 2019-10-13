@@ -127,7 +127,7 @@ COLORS
   position: relative;
   z-index: 9;
   overflow: visible;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 @media only screen and (max-width: 1080px) {
   .carousel_circle {
@@ -295,6 +295,7 @@ COLORS
   font-size: 4.8rem;
   margin: 0 0 2.5rem 0;
   font-weight: 600;
+  transform-origin: bottom left;
 }
 @media only screen and (max-width: 1080px) {
   .description_price {
@@ -333,6 +334,7 @@ COLORS
   text-transform: capitalize;
   max-width: 30rem;
   margin: 0 0 1.5rem 0;
+  transform-origin: bottom left;
 }
 @media only screen and (max-width: 1080px) {
   .description_title {
@@ -363,28 +365,28 @@ COLORS
   align-items: center;
 }
 .description_button.pink {
-  background: #dd6a23;
+  background-color: #dd6a23;
 }
 .description_button.yellow {
-  background: #ddd012;
+  background-color: #ddd012;
 }
 .description_button.magenta {
-  background: #ec1e80;
+  background-color: #ec1e80;
 }
 .description_button.violet {
-  background: #cb23e0;
+  background-color: #cb23e0;
 }
 .description_button.brown {
-  background: #db620b;
+  background-color: #db620b;
 }
 .description_button.green {
-  background: #0cdd1f;
+  background-color: #0cdd1f;
 }
 .description_button.aqua {
-  background: #12ddbb;
+  background-color: #12ddbb;
 }
 .description_button.blue {
-  background: #1697ee;
+  background-color: #1697ee;
 }
 .controller {
   display: flex;
@@ -456,6 +458,34 @@ COLORS
     width: 18rem;
     height: 18rem;
   }
+}
+@keyframes scales {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes scales1 {
+  0% {
+    width: 15rem;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 15rem;
+  }
+}
+#animate {
+  animation: scales 0.4s ease;
+}
+#animate1 {
+  animation: scales1 0.4s ease;
 }
 .icon-location-shopping {
   width: 1.5rem;

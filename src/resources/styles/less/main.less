@@ -118,7 +118,7 @@
         position: relative;
         z-index: 9;
         overflow: visible;
-        transition: all .3s;
+        transition: all .2s;
 
         .responsive(@tab-land, {
 
@@ -350,6 +350,7 @@
         font-size: 4.8rem;
         margin: 0 0 2.5rem 0;
         font-weight: 600;
+        transform-origin: bottom left;
 
         .responsive(@tab-land, {
 
@@ -362,41 +363,49 @@
 
              color: darken(@color-pink, 35%);
             
+            
          }
     
          &.yellow {
     
              color: darken(@color-yellow, 35%);
+            
          }
     
          &.magenta {
     
              color: darken(@color-magenta, 35%);
+            
          }
     
          &.violet {
     
              color: darken(@color-violet, 35%);
+            
          }
     
          &.brown {
     
              color: darken(@color-brown, 35%);
+            
          }
     
          &.green {
     
              color: darken(@color-green, 35%);
+            
          }
     
          &.aqua {
     
-             color: darken(@color-aqua, 35%);    
+             color: darken(@color-aqua, 35%);  
+              
          }
     
          &.blue {
     
-             color: darken(@color-blue, 35%);       
+             color: darken(@color-blue, 35%);  
+                 
           } 
 
     }
@@ -409,6 +418,7 @@
         text-transform: capitalize;
         max-width: 30rem;
         margin: 0 0 1.5rem 0;
+        transform-origin: bottom left;
 
         .responsive(@tab-land, {
 
@@ -449,43 +459,43 @@
         
         &.pink {
 
-            background: darken(@color-pink, 35%);
+            background-color: darken(@color-pink, 35%);
             
          }
     
          &.yellow {
     
-            background: darken(@color-yellow, 35%);
+            background-color: darken(@color-yellow, 35%);
          }
     
          &.magenta {
     
-            background: darken(@color-magenta, 35%);
+            background-color: darken(@color-magenta, 35%);
          }
     
          &.violet {
     
-            background: darken(@color-violet, 35%);
+            background-color: darken(@color-violet, 35%);
          }
     
          &.brown {
     
-            background: darken(@color-brown, 35%);
+            background-color: darken(@color-brown, 35%);
          }
     
          &.green {
     
-            background: darken(@color-green, 35%);
+            background-color: darken(@color-green, 35%);
          }
     
          &.aqua {
     
-            background: darken(@color-aqua, 35%);    
+            background-color: darken(@color-aqua, 35%);    
          }
     
          &.blue {
     
-            background: darken(@color-blue, 35%);       
+            background-color: darken(@color-blue, 35%);       
           }      
 
     }
@@ -587,5 +597,33 @@
         });
        
     }
+
+}
+
+@keyframes scales {
+
+    0%   {transform: scale(1,1);}
+    50%  {transform: scale(0, 0);}
+    100% {transform: scale(1,1);}
+
+}
+
+@keyframes scales1 {
+
+    0%   {width:15rem; }
+    50%  {width:0; }
+    100% {width:15rem; }
+
+}
+
+#animate {
+
+    animation: scales .4s ease;
+
+}
+
+#animate1 {
+
+    animation: scales1 .4s ease;
 
 }

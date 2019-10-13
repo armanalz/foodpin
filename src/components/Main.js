@@ -8,6 +8,7 @@ class Main extends Component {
         rotate: 0,
         i: 0,
         circulate: 0,
+        animate: false,
         description: {
 
             price: [32,45,71,59,60,90,29,44],
@@ -26,40 +27,67 @@ class Main extends Component {
 
     }
 
+
     carouselHandler = (e) => {
      
         let  length = this.state.description.price.length-1;
 
         this.setState({
-            circulate: this.state.circulate + 360
+            circulate: this.state.circulate + 360, animate: true
         })
 
         if(e.target.id === "right" && this.state.i < length) {
-            this.setState({
-                   rotate: this.state.rotate + 45, i: this.state.i+1
-            })
+
+            setTimeout(() => {
+
+                this.setState({
+                    rotate: this.state.rotate + 45, i: this.state.i+1
+                })
+                
+            }, 200);
 
         }else if(e.target.id === "right" && this.state.i >= length) {
 
-            this.setState({
-                  rotate: this.state.rotate + 45, i: 0
-            })
+            setTimeout(() => {
+
+                this.setState({
+                    rotate: this.state.rotate + 45, i: 0
+                })
+                
+            }, 200);
 
         }else if(e.target.id === "left" && this.state.i > 0) {
 
-            this.setState({
-                rotate: this.state.rotate - 45, i: this.state.i-1
-            })
+            setTimeout(() => {
+
+                this.setState({
+                    rotate: this.state.rotate - 45, i: this.state.i-1
+                })
+                
+            }, 200);
 
         }else if (e.target.id === "left" && this.state.i >= 0) {
 
-            this.setState({
-                rotate: this.state.rotate - 45, i: length
-            })
+            setTimeout(() => {
 
-        }
+                this.setState({
+                    rotate: this.state.rotate - 45, i: length
+                })
+                
+            }, 200);
+
+        } 
+
+        setTimeout(() => {
+
+            this.setState({
+                 animate: false
+            })
+            
+        }, 550);
 
     }
+
     render() {
 
         let bg = require(`../resources/img/img-${this.state.i}.png`)
@@ -102,10 +130,11 @@ class Main extends Component {
                         <h1 className={`description_price 
                                         ${this.state.description.color[this.state.i]}`
                                       }
+                            id={this.state.animate ? "animate" : ""}
                         >
                              ${this.state.description.price[this.state.i]}
                         </h1>
-                        <h2 className="description_title">
+                        <h2 className="description_title"  id={this.state.animate ? "animate" : ""}>
                             {this.state.description.title[this.state.i]}
                         </h2>
                         <p className="description_text">
@@ -116,6 +145,7 @@ class Main extends Component {
                         <div className={`description_button 
                                          ${this.state.description.color[this.state.i]}`
                                        }
+                             id={this.state.animate ? "animate1" : ""}          
                         >
                             add to card
                         </div>
