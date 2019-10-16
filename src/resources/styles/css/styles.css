@@ -127,7 +127,7 @@ COLORS
   position: relative;
   z-index: 9;
   overflow: visible;
-  transition: all 0.2s;
+  transition: all 0.45s;
 }
 @media only screen and (max-width: 1080px) {
   .carousel_circle {
@@ -295,7 +295,6 @@ COLORS
   font-size: 4.8rem;
   margin: 0 0 2.5rem 0;
   font-weight: 600;
-  transform-origin: bottom left;
 }
 @media only screen and (max-width: 1080px) {
   .description_price {
@@ -334,7 +333,6 @@ COLORS
   text-transform: capitalize;
   max-width: 30rem;
   margin: 0 0 1.5rem 0;
-  transform-origin: bottom left;
 }
 @media only screen and (max-width: 1080px) {
   .description_title {
@@ -355,14 +353,20 @@ COLORS
 .description_button {
   width: 15rem;
   border-radius: 10rem;
-  color: #fefefe;
-  text-transform: capitalize;
-  font-size: 1.3rem;
-  font-weight: 700;
+  height: 3.5rem;
   padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.description_button-text {
+  width: 10rem;
+  min-width: 10rem;
+  color: #fefefe;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
 }
 .description_button.pink {
   background-color: #dd6a23;
@@ -459,33 +463,65 @@ COLORS
     height: 18rem;
   }
 }
-@keyframes scales {
+@keyframes textScale {
   0% {
     transform: scale(1, 1);
+    opacity: 1;
+    transform-origin: bottom left;
+  }
+  25% {
+    transform: scale(0.5, 0.8);
+    opacity: 0.4;
+    transform-origin: bottom left;
   }
   50% {
-    transform: scale(0, 0);
+    transform: scale(0, 0.5);
+    opacity: 0;
+    transform-origin: bottom left;
+  }
+  75% {
+    transform: scale(0.8, 0.8);
+    opacity: 0.4;
+    transform-origin: top right;
   }
   100% {
     transform: scale(1, 1);
+    opacity: 1;
+    transform-origin: top right;
   }
 }
-@keyframes scales1 {
+@keyframes buttonScale {
   0% {
-    width: 15rem;
+    transform: scale(1, 1);
+    opacity: 1;
+    transform-origin: left;
+  }
+  25% {
+    transform: scale(0.8, 0.6);
+    opacity: 0.4;
+    transform-origin: left;
   }
   50% {
-    width: 0;
+    transform: scale(0, 0.8);
+    opacity: 0;
+    transform-origin: right;
+  }
+  75% {
+    transform: scale(0.8, 0.6);
+    opacity: 0.4;
+    transform-origin: right;
   }
   100% {
-    width: 15rem;
+    transform: scale(1, 1);
+    opacity: 1;
+    transform-origin: right;
   }
 }
-#animate {
-  animation: scales 0.4s ease;
+#text-animate {
+  animation: textScale 0.5s ease;
 }
-#animate1 {
-  animation: scales1 0.4s ease;
+#button-animate {
+  animation: buttonScale 0.5s ease;
 }
 .icon-location-shopping {
   width: 1.5rem;

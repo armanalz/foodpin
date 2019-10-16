@@ -38,43 +38,27 @@ class Main extends Component {
 
         if(e.target.id === "right" && this.state.i < length) {
 
-            setTimeout(() => {
-
                 this.setState({
                     rotate: this.state.rotate + 45, i: this.state.i+1
-                })
-                
-            }, 200);
+                })              
 
         }else if(e.target.id === "right" && this.state.i >= length) {
-
-            setTimeout(() => {
 
                 this.setState({
                     rotate: this.state.rotate + 45, i: 0
                 })
-                
-            }, 200);
 
         }else if(e.target.id === "left" && this.state.i > 0) {
-
-            setTimeout(() => {
 
                 this.setState({
                     rotate: this.state.rotate - 45, i: this.state.i-1
                 })
-                
-            }, 200);
 
         }else if (e.target.id === "left" && this.state.i >= 0) {
-
-            setTimeout(() => {
 
                 this.setState({
                     rotate: this.state.rotate - 45, i: length
                 })
-                
-            }, 200);
 
         } 
 
@@ -84,7 +68,7 @@ class Main extends Component {
                  animate: false
             })
             
-        }, 550);
+        }, 505);
 
     }
 
@@ -130,11 +114,11 @@ class Main extends Component {
                         <h1 className={`description_price 
                                         ${this.state.description.color[this.state.i]}`
                                       }
-                            id={this.state.animate ? "animate" : ""}
+                            id={this.state.animate ? "text-animate" : ""}
                         >
                              ${this.state.description.price[this.state.i]}
                         </h1>
-                        <h2 className="description_title"  id={this.state.animate ? "animate" : ""}>
+                        <h2 className="description_title"  id={this.state.animate ? "text-animate" : ""}>
                             {this.state.description.title[this.state.i]}
                         </h2>
                         <p className="description_text">
@@ -145,9 +129,9 @@ class Main extends Component {
                         <div className={`description_button 
                                          ${this.state.description.color[this.state.i]}`
                                        }
-                             id={this.state.animate ? "animate1" : ""}          
+                             id={this.state.animate ? "button-animate" : ""}          
                         >
-                            add to card
+                            <p className="description_button-text"> add to card </p>
                         </div>
                     </div>
 
