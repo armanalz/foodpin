@@ -1,0 +1,58 @@
+@keyframes textScale {
+
+    0%   {transform: scale(1,1); opacity: 1; transform-origin: bottom left;}
+    25%  {transform: scale(0.5, 0.8); opacity: 0.4; transform-origin: bottom left;}
+    50%  {transform: scale(0, 0.5); opacity: 0; transform-origin: bottom left;}
+    75%  {transform: scale(0.8, 0.8); opacity: 0.4; transform-origin: top right;}
+    100% {transform: scale(1,1); opacity: 1; transform-origin: top right;}
+
+}
+
+@keyframes buttonScale {
+
+    0%   {transform: scale(1,1); opacity: 1; transform-origin: left;}
+    25%  {transform: scale(0.8, 0.6); opacity: 0.4; transform-origin: left;}
+    50%  {transform: scale(0, 0.8); opacity: 0; transform-origin: right;}
+    75%  {transform: scale(0.8, 0.6); opacity: 0.4; transform-origin: right;}
+    100% {transform: scale(1,1); opacity: 1; transform-origin: right;}
+
+}
+
+@keyframes sidebarOpen {
+
+ from {transform: scaleX(0)}
+ to {transform: scaleX(1)}
+
+}
+
+@keyframes sidebarClose {
+
+    from {transform: scaleX(1)}
+    to {transform: scaleX(0)}
+   
+}
+
+@keyframes menuButton {
+
+    from {background-color: transparent}
+    to {background-color: rgba(@color-white, .2);}
+   
+}
+
+#text-animate {
+
+    animation: textScale .5s ease;
+
+}
+
+#button-animate {
+
+    animation: buttonScale .5s ease;
+
+}
+
+#menu {
+
+   animation-duration: .4s;
+   animation-timing-function: ease;
+}

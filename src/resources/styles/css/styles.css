@@ -46,6 +46,32 @@ COLORS
 .main {
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+.sidebar {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  background: rgba(8, 8, 8, 0.7);
+  flex-direction: row-reverse;
+}
+.sidebar_navigation {
+  display: flex;
+  flex-direction: column;
+  background: #F1F1F1;
+  padding: 2rem;
+  transform-origin: right;
+}
+.sidebar_navigation-item {
+  font-size: 1.5rem;
+  margin: 1.5rem 4rem 0 0;
+  text-transform: capitalize;
+}
+.sidebar_navigation-item:first-child {
+  margin: 6rem auto 6rem auto;
 }
 .header {
   display: flex;
@@ -53,18 +79,57 @@ COLORS
   top: 0;
   left: 0;
   right: 0;
-  padding: 2.5rem 5rem 0 5rem;
+  padding: 2.5rem 5rem 2.5rem 5rem;
   justify-content: space-between;
   align-items: center;
   color: #3a3a3a;
-  z-index: 9999;
+  z-index: 99999;
+}
+.header.pink {
+  background-color: #eba67c;
+}
+.header.yellow {
+  background-color: #f2e963;
+}
+.header.magenta {
+  background-color: #f47cb5;
+}
+.header.violet {
+  background-color: #e07ced;
+}
+.header.brown {
+  background-color: #f69956;
+}
+.header.green {
+  background-color: #58f667;
+}
+.header.aqua {
+  background-color: #63f2da;
+}
+.header.blue {
+  background-color: #75c1f5;
+}
+@media only screen and (max-width: 650px) {
+  .header {
+    padding: 1.6rem 2.5rem;
+  }
 }
 .header_title {
   font-size: 2rem;
 }
+@media only screen and (max-width: 650px) {
+  .header_title {
+    font-size: 1.8rem;
+  }
+}
 .header_navigation {
   display: flex;
   margin: 0 0 0 -40rem;
+}
+@media only screen and (max-width: 650px) {
+  .header_navigation {
+    display: none;
+  }
 }
 @media only screen and (max-width: 1080px) {
   .header_navigation {
@@ -75,6 +140,36 @@ COLORS
   font-size: 1.5rem;
   margin: 0 4rem 0 0;
   text-transform: capitalize;
+}
+.header_menu {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+.header_menu:hover {
+  animation: menuButton 0.1s ease;
+  background-color: rgba(8, 8, 8, 0.1);
+}
+.header_menu:active {
+  border: none;
+}
+@media only screen and (max-width: 650px) {
+  .header_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.header_menu-item {
+  width: 2rem;
+  height: 0.2rem;
+  background: #3a3a3a;
+}
+.header_menu-item:not(:last-child) {
+  margin-bottom: 0.3rem;
 }
 .carousel {
   clip-path: circle(50vw at 70% -15vw);
@@ -90,6 +185,12 @@ COLORS
     clip-path: circle(50vw at 50% -1vw);
     justify-content: center;
     align-items: center;
+    max-height: 55rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .carousel {
+    clip-path: circle(65vw at 50% -1vw);
     max-height: 55rem;
   }
 }
@@ -296,6 +397,11 @@ COLORS
   margin: 0 0 2.5rem 0;
   font-weight: 600;
 }
+@media only screen and (max-width: 650px) {
+  .description_price {
+    font-size: 4.5rem;
+  }
+}
 @media only screen and (max-width: 1080px) {
   .description_price {
     text-align: center;
@@ -333,6 +439,11 @@ COLORS
   text-transform: capitalize;
   max-width: 30rem;
   margin: 0 0 1.5rem 0;
+}
+@media only screen and (max-width: 650px) {
+  .description_title {
+    font-size: 3.9rem;
+  }
 }
 @media only screen and (max-width: 1080px) {
   .description_title {
@@ -421,7 +532,7 @@ COLORS
   cursor: pointer;
   transition: all 0.3s;
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 480px) {
   .controller_arrow {
     margin-top: 10rem;
   }
@@ -437,7 +548,7 @@ COLORS
 }
 @media only screen and (max-width: 650px) {
   .controller_arrow.left {
-    margin-right: 8rem;
+    margin-right: 3.5rem;
   }
 }
 .controller_arrow.right {
@@ -445,7 +556,7 @@ COLORS
 }
 @media only screen and (max-width: 650px) {
   .controller_arrow.right {
-    margin-left: 8rem;
+    margin-left: 3.5rem;
   }
 }
 .controller_middle {
@@ -517,16 +628,54 @@ COLORS
     transform-origin: right;
   }
 }
+@keyframes sidebarOpen {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes sidebarClose {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+@keyframes menuButton {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: rgba(254, 254, 254, 0.2);
+  }
+}
 #text-animate {
   animation: textScale 0.5s ease;
 }
 #button-animate {
   animation: buttonScale 0.5s ease;
 }
+#menu {
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+}
 .icon-location-shopping {
   width: 1.5rem;
   height: 1.5rem;
   fill: #3a3a3a;
+}
+@media only screen and (max-width: 650px) {
+  #header_navigation {
+    display: none;
+  }
+}
+#sidebar_navigation {
+  width: 2rem;
+  height: 2rem;
+  margin: 5rem auto 5rem auto;
 }
 .icon-arrow-down2 {
   width: 1.6rem;

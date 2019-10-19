@@ -2,7 +2,45 @@
 
     overflow: hidden;
     font-family: @main-font;
+    position: relative;
 
+}
+
+.sidebar {
+
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999;
+    background: rgba(@color-black, .7);
+    flex-direction: row-reverse;
+ 
+
+    &_navigation {
+
+        display: flex;
+        flex-direction: column;
+        background: @bg-color;
+        padding: 2rem;
+        transform-origin: right;
+
+
+
+        &-item {
+
+            &:first-child {
+
+                margin: 6rem auto 6rem auto;
+            }
+
+            font-size: 1.5rem;
+            margin: 1.5rem 4rem 0 0;
+            text-transform: capitalize;
+
+        }
+    }
 }
 
 .header {
@@ -12,15 +50,70 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 2.5rem 5rem 0 5rem;
+    padding: 2.5rem 5rem 2.5rem 5rem;
     justify-content: space-between;
     align-items: center;
     color: @color-primary;
-    z-index: 9999;
+    z-index: 99999;
+
+
+        &.pink {
+
+            background-color: darken(@color-pink, 15%);
+            
+         }
+    
+         &.yellow {
+    
+            background-color: darken(@color-yellow, 15%);
+         }
+    
+         &.magenta {
+    
+            background-color: darken(@color-magenta, 15%);
+         }
+    
+         &.violet {
+    
+            background-color: darken(@color-violet, 15%);
+         }
+    
+         &.brown {
+    
+            background-color: darken(@color-brown, 15%);
+         }
+    
+         &.green {
+    
+            background-color: darken(@color-green, 15%);
+         }
+    
+         &.aqua {
+    
+            background-color: darken(@color-aqua, 15%);    
+         }
+    
+         &.blue {
+    
+            background-color: darken(@color-blue, 15%);       
+          }      
+    
+
+    .responsive(@phone, {
+
+        padding: 1.6rem 2.5rem;
+    
+    });
 
     &_title {
 
         font-size: 2rem;
+
+        .responsive(@phone, {
+
+            font-size: 1.8rem;
+        
+        });
 
     }
 
@@ -28,6 +121,12 @@
 
         display: flex;
         margin: 0 0 0 -40rem;
+
+        .responsive(@phone, {
+
+            display: none;
+        
+        });
 
         .responsive(@tab-land, {
 
@@ -41,6 +140,65 @@
             margin: 0 4rem 0 0;
             text-transform: capitalize;
         }
+    }
+
+    &_menu {
+
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        display: none;
+        cursor: pointer;
+
+
+        &:hover {
+            animation: menuButton .1s ease;
+
+            background-color: rgba(@color-black, .1);
+        }
+
+        &:active {
+
+          //  animation: menuButton .2s ease;
+            border: none;
+
+        }
+
+        .responsive(@phone, {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        
+        });
+
+
+        &-item {
+
+            width: 2rem;
+            height: .2rem;
+            background: @color-primary;
+            &:not(:last-child) {
+
+                margin-bottom: .3rem;
+            }
+
+            &.top {
+
+            }
+    
+            &.middle {
+    
+    
+            }
+    
+            &.bottom {
+    
+    
+            }
+        }
+
     }
 
 }
@@ -64,6 +222,14 @@
         
  
      });
+
+    .responsive(@phone, {
+
+        clip-path:  circle(65vw at 50% -1vw);
+        max-height: 55rem;
+        
+ 
+    });
 
      &.pink {
 
@@ -351,6 +517,12 @@
         margin: 0 0 2.5rem 0;
         font-weight: 600;
 
+        .responsive(@phone, {
+
+            font-size: 4.5rem;
+       
+        });
+
         .responsive(@tab-land, {
 
           text-align: center;
@@ -417,6 +589,12 @@
         text-transform: capitalize;
         max-width: 30rem;
         margin: 0 0 1.5rem 0;
+
+        .responsive(@phone, {
+
+            font-size: 3.9rem;
+       
+        });
 
         .responsive(@tab-land, {
 
@@ -541,7 +719,7 @@
         cursor: pointer;
         transition: all .3s;
 
-        .responsive(@phone, {
+        .responsive(@xs, {
 
             margin-top: 10rem;
     
@@ -564,7 +742,7 @@
 
             .responsive(@phone, {
 
-                margin-right: 8rem;
+                margin-right: 3.5rem;
         
             });
 
@@ -576,7 +754,7 @@
 
             .responsive(@phone, {
 
-                margin-left: 8rem;
+                margin-left: 3.5rem;
         
             });
 
@@ -606,34 +784,4 @@
 
 }
 
-@keyframes textScale {
 
-    0%   {transform: scale(1,1); opacity: 1; transform-origin: bottom left;}
-    25%  {transform: scale(0.5, 0.8); opacity: 0.4; transform-origin: bottom left;}
-    50%  {transform: scale(0, 0.5); opacity: 0; transform-origin: bottom left;}
-    75%  {transform: scale(0.8, 0.8); opacity: 0.4; transform-origin: top right;}
-    100% {transform: scale(1,1); opacity: 1; transform-origin: top right;}
-
-}
-
-@keyframes buttonScale {
-
-    0%   {transform: scale(1,1); opacity: 1; transform-origin: left;}
-    25%  {transform: scale(0.8, 0.6); opacity: 0.4; transform-origin: left;}
-    50%  {transform: scale(0, 0.8); opacity: 0; transform-origin: right;}
-    75%  {transform: scale(0.8, 0.6); opacity: 0.4; transform-origin: right;}
-    100% {transform: scale(1,1); opacity: 1; transform-origin: right;}
-
-}
-
-#text-animate {
-
-    animation: textScale .5s ease;
-
-}
-
-#button-animate {
-
-    animation: buttonScale .5s ease;
-
-}

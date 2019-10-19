@@ -7,8 +7,11 @@ class Main extends Component {
 
         rotate: 0,
         i: 0,
+        bckShow: false,
         circulate: 0,
         animate: false,
+        showSidebar: false,
+        openMenu:false,
         description: {
 
             price: [32,45,71,59,60,90,29,44],
@@ -27,37 +30,81 @@ class Main extends Component {
 
     }
 
+    componentDidMount(){
+
+        window.addEventListener('scroll',this.scrollHandler);
+        window.addEventListener('resize',this.resizeHandler);
+
+    }
+
+    scrollHandler = () => {
+
+        if (window.scrollY > 1) {
+
+             this.setState({
+
+                 bckShow:true
+
+             })
+
+        } else {
+
+             this.setState({
+
+                 bckShow:false
+
+             })
+        }
+    }
+
+    resizeHandler = () => {
+
+        if (window.innerWidth > 600) {
+
+             this.setState({
+
+                showSidebar: false
+
+             })
+
+        } 
+    }
+
 
     carouselHandler = (e) => {
      
         let  length = this.state.description.price.length-1;
 
         this.setState({
-            circulate: this.state.circulate + 360, animate: true
+             animate: true
         })
 
         if(e.target.id === "right" && this.state.i < length) {
 
                 this.setState({
-                    rotate: this.state.rotate + 45, i: this.state.i+1
+                    circulate: this.state.circulate + 360,  rotate: this.state.rotate + 45,
+                     i: this.state.i+1
                 })              
 
         }else if(e.target.id === "right" && this.state.i >= length) {
 
                 this.setState({
-                    rotate: this.state.rotate + 45, i: 0
+                    circulate: this.state.circulate + 360, rotate: this.state.rotate + 45,
+                     i: 0
                 })
 
         }else if(e.target.id === "left" && this.state.i > 0) {
 
                 this.setState({
-                    rotate: this.state.rotate - 45, i: this.state.i-1
+                    circulate: this.state.circulate - 360, rotate: this.state.rotate - 45,
+                    i: this.state.i-1
                 })
 
         }else if (e.target.id === "left" && this.state.i >= 0) {
 
                 this.setState({
-                    rotate: this.state.rotate - 45, i: length
+                    circulate: this.state.circulate - 360, rotate: this.state.rotate - 45,
+                     i: length
                 })
 
         } 
@@ -72,6 +119,41 @@ class Main extends Component {
 
     }
 
+    sidebarOpenHandler = () => {
+
+
+            this.setState({
+
+                showSidebar: true, openMenu: true
+
+            })
+
+    }
+
+    sidebarCloseHandler = (e) => {
+
+        if(e.target.id !== "menu" && e.target.id !== "sidebar_navigation") {
+
+            this.setState({
+
+                 openMenu: false
+    
+            })
+
+            setTimeout(() => {
+
+                this.setState({
+
+                    showSidebar: false
+
+                })
+                
+            }, 400);
+
+        }
+
+    }
+
     render() {
 
         let bg = require(`../resources/img/img-${this.state.i}.png`)
@@ -80,14 +162,35 @@ class Main extends Component {
 
             <main className="main">
 
-                <header className="header">
+                <div className="sidebar" 
+                     style={{display:this.state.showSidebar ? "flex" : "none"}}
+                     onClick={(e) => this.sidebarCloseHandler(e)}
+                >
+
+                   <nav className="sidebar_navigation" id="menu"
+                        style={{animationName:this.state.openMenu ? "sidebarOpen" : "sidebarClose"}}
+                   >
+                        <Icon id="sidebar_navigation" name="icon-location-shopping"/>
+                        <p id="menu" className="sidebar_navigation-item">breakfast</p>
+                        <p id="menu" className="sidebar_navigation-item">lunch</p>
+                        <p id="menu" className="sidebar_navigation-item">dinner</p>
+                    </nav>
+
+                </div>
+
+                <header className={this.state.bckShow ? `header ${this.state.description.color[this.state.i]}` : "header"}>
                     <h4 className="header_title">FoodSpin</h4>
                     <nav className="header_navigation">
                         <p className="header_navigation-item">breakfast</p>
                         <p className="header_navigation-item">lunch</p>
                         <p className="header_navigation-item">dinner</p>
                     </nav>
-                    <Icon name="icon-location-shopping"/>
+                    <Icon id="header_navigation" name="icon-location-shopping"/>
+                    <div className="header_menu" onClick={() => this.sidebarOpenHandler()}>
+                            <div className="header_menu-item top"></div>
+                            <div className="header_menu-item middle"></div>
+                            <div className="header_menu-item bottom"></div>
+                    </div>
                 </header>
 
                 <div className={`carousel ${this.state.description.color[this.state.i]}`}>
