@@ -32,10 +32,39 @@
    
 }
 
+@keyframes fadeMenu {
+
+    from {background: rgba(@color-black, .7)}
+    to {background: transparent}
+   
+   }
+
 @keyframes menuButton {
 
-    from {background-color: transparent}
-    to {background-color: rgba(@color-white, .2);}
+    0% {
+
+        background-size: 0 0;
+        background-image:radial-gradient(circle, rgba(white, .4) 30%, rgba(@color-white, .3) 70%);
+
+    }
+
+    33% {
+        background-size: 3.8rem 3.8rem;
+        background-image:radial-gradient(circle, rgba(white, .5) 30%, rgba(@color-white, .4) 70%);
+
+    }
+
+    67% {
+        background-size: 3.8rem 3.8rem;
+        background-image:radial-gradient(circle, rgba(white, .5) 30%, rgba(@color-white, .4) 70%);
+
+    }
+
+    100% {
+        background-size: 3.8rem 3.8rem;
+        background-image:radial-gradient(circle, transparent, transparent);
+
+    }
    
 }
 

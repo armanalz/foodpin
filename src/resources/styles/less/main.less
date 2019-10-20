@@ -16,6 +16,8 @@
     z-index: 999999;
     background: rgba(@color-black, .7);
     flex-direction: row-reverse;
+    animation-duration: .4s;
+    animation-timing-function: ease;
  
 
     &_navigation {
@@ -120,7 +122,7 @@
     &_navigation {
 
         display: flex;
-        margin: 0 0 0 -40rem;
+        margin: 0 0 0 -37.5rem;
 
         .responsive(@phone, {
 
@@ -130,7 +132,7 @@
 
         .responsive(@tab-land, {
 
-            margin: 0 0 0 -15rem;
+            margin: 0 0 0 -10rem;
         
         });
 
@@ -144,23 +146,35 @@
 
     &_menu {
 
-        height: 4rem;
-        width: 4rem;
+        height: 3.8rem;
+        width: 3.8rem;
         border-radius: 50%;
         display: none;
         cursor: pointer;
+     
 
 
         &:hover {
-            animation: menuButton .1s ease;
+          
+            background-color: rgba(@color-black, .07);        
 
-            background-color: rgba(@color-black, .1);
         }
 
         &:active {
 
-          //  animation: menuButton .2s ease;
+            -webkit-tap-highlight-color: transparent;
+            animation: menuButton .19s ease;
+            background-repeat: no-repeat;
+            background-position: center;
+           
+        }
+
+        &:visited,&:focus:active,&:focus:after {
+
             border: none;
+            outline: none;
+            box-shadow: none;
+            -webkit-tap-highlight-color: transparent;
 
         }
 
@@ -733,6 +747,7 @@
         &:active {
 
             transform: translateY(3px);
+            -webkit-tap-highlight-color: transparent;
         }
 
 

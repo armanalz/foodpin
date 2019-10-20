@@ -121,12 +121,13 @@ class Main extends Component {
 
     sidebarOpenHandler = () => {
 
-
+        setTimeout(() => {
             this.setState({
 
                 showSidebar: true, openMenu: true
 
             })
+        }, 200);
 
     }
 
@@ -163,7 +164,8 @@ class Main extends Component {
             <main className="main">
 
                 <div className="sidebar" 
-                     style={{display:this.state.showSidebar ? "flex" : "none"}}
+                     style={{display:this.state.showSidebar ? "flex" : "none",
+                             animationName:this.state.openMenu ? "" : "fadeMenu"}}
                      onClick={(e) => this.sidebarCloseHandler(e)}
                 >
 

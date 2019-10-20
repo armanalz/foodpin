@@ -57,6 +57,8 @@ COLORS
   z-index: 999999;
   background: rgba(8, 8, 8, 0.7);
   flex-direction: row-reverse;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
 }
 .sidebar_navigation {
   display: flex;
@@ -124,7 +126,7 @@ COLORS
 }
 .header_navigation {
   display: flex;
-  margin: 0 0 0 -40rem;
+  margin: 0 0 0 -37.5rem;
 }
 @media only screen and (max-width: 650px) {
   .header_navigation {
@@ -133,7 +135,7 @@ COLORS
 }
 @media only screen and (max-width: 1080px) {
   .header_navigation {
-    margin: 0 0 0 -15rem;
+    margin: 0 0 0 -10rem;
   }
 }
 .header_navigation-item {
@@ -142,18 +144,28 @@ COLORS
   text-transform: capitalize;
 }
 .header_menu {
-  height: 4rem;
-  width: 4rem;
+  height: 3.8rem;
+  width: 3.8rem;
   border-radius: 50%;
   display: none;
   cursor: pointer;
 }
 .header_menu:hover {
-  animation: menuButton 0.1s ease;
-  background-color: rgba(8, 8, 8, 0.1);
+  background-color: rgba(8, 8, 8, 0.07);
 }
 .header_menu:active {
+  -webkit-tap-highlight-color: transparent;
+  animation: menuButton 0.19s ease;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header_menu:visited,
+.header_menu:focus:active,
+.header_menu:focus:after {
   border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
 }
 @media only screen and (max-width: 650px) {
   .header_menu {
@@ -542,6 +554,7 @@ COLORS
 }
 .controller_arrow:active {
   transform: translateY(3px);
+  -webkit-tap-highlight-color: transparent;
 }
 .controller_arrow.left {
   margin-right: 13rem;
@@ -644,12 +657,30 @@ COLORS
     transform: scaleX(0);
   }
 }
-@keyframes menuButton {
+@keyframes fadeMenu {
   from {
-    background-color: transparent;
+    background: rgba(8, 8, 8, 0.7);
   }
   to {
-    background-color: rgba(254, 254, 254, 0.2);
+    background: transparent;
+  }
+}
+@keyframes menuButton {
+  0% {
+    background-size: 0 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 30%, rgba(254, 254, 254, 0.3) 70%);
+  }
+  33% {
+    background-size: 3.8rem 3.8rem;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 30%, rgba(254, 254, 254, 0.4) 70%);
+  }
+  67% {
+    background-size: 3.8rem 3.8rem;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.5) 30%, rgba(254, 254, 254, 0.4) 70%);
+  }
+  100% {
+    background-size: 3.8rem 3.8rem;
+    background-image: radial-gradient(circle, transparent, transparent);
   }
 }
 #text-animate {
