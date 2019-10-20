@@ -2,7 +2,9 @@
   "name": "foodpin",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/armanalz/foodpin",
   "dependencies": {
+    "gh-pages": "^2.1.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-scripts": "3.1.2"
@@ -12,6 +14,8 @@
     "build": "react-scripts build",
     "watch:less": "less-watch-compiler src/resources/styles/less src/resources/styles/css",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
