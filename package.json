@@ -1,7 +1,7 @@
 {
   "name": "foodpin",
   "version": "0.1.0",
-  "homepage": "https://github.com/armanalz/foodpin",
+  "homepage": "https://armanalz.github.io/foodpin/",
   "private": true,
   "dependencies": {
     "gh-pages": "^2.1.1",
