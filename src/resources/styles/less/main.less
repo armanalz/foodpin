@@ -3,6 +3,10 @@
     overflow: hidden;
     font-family: @main-font;
     position: relative;
+    margin: 0 auto;
+    max-width: 175rem;
+    background: @bg-color;
+    min-height: 100vh;
 
 }
 
@@ -48,7 +52,7 @@
 .header {
   
     display: flex;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -104,6 +108,7 @@
     .responsive(@phone, {
 
         padding: 1.6rem 2.5rem;
+        position: fixed;
     
     });
 
@@ -219,7 +224,7 @@
 
 .carousel {
 
-    clip-path:  circle(50vw at 70% -15vw);
+    clip-path:  circle(76rem at 105rem -29rem);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
